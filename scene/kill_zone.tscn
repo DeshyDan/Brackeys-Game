@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://crbab6xrvwx3h"]
+[gd_scene load_steps=3 format=3 uid="uid://crbab6xrvwx3h"]
 
 [ext_resource type="Script" path="res://scene/kill_zone.gd" id="1_vj275"]
+[ext_resource type="AudioStream" uid="uid://bdnp826ydq4hq" path="res://assets/sounds/fall.wav" id="2_kpnpy"]
 
 [node name="KillZone" type="Area2D"]
 collision_mask = 2
@@ -9,6 +10,9 @@ script = ExtResource("1_vj275")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_kpnpy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

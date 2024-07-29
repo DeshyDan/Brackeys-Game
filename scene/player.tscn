@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3cr7tta4gxup"]
+[gd_scene load_steps=19 format=3 uid="uid://d3cr7tta4gxup"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0i04d"]
 [ext_resource type="Texture2D" uid="uid://bpqhb4hf3y784" path="res://assets/sprites/knight.png" id="1_4wl54"]
+[ext_resource type="AudioStream" uid="uid://ishyt2e57hrj" path="res://assets/sounds/jump.wav" id="3_oedab"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2onl"]
 atlas = ExtResource("1_4wl54")
@@ -129,3 +130,7 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_ihd2n")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_oedab")
+bus = &"SFX"
